@@ -6,7 +6,7 @@
 
 <% @products.each do |product| %>
 
-<li><a href="/products/<%= product.id %>"><%= product.name%>, <%= product.description %> $<%= product.formatted_price %></a></li>
+<li><a href="/products/<%= product.id %>"><%= product.name%>, <%= product.description %> <%= number_to_currency(product.formatted_price, delimeter: ",") %></a></li>
 
 <% end %>
 
