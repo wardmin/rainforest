@@ -4,6 +4,18 @@ $(document).on('ready page:load', function() {
 		var searchValue = $('#search').val();
 
 		$.getScript('/products?search=' + searchValue);
-		});
 	});
 });
+
+$(document).on('ready page:load', function() {
+	$(window).scroll(function() {
+		if ( $(window).scrollTop() > ($(document).height() - $(window).height() - 50)) {
+			var nextPage = $('.pagination .next a');
+			if ( nextPage.length > 0 ) {
+				var href = nextPage.attr('href');
+				$.getScript(href);
+			}
+			
+		}
+	});
+})

@@ -1,4 +1,13 @@
 
 
-<a href="/products/<%= product.id %>"><%= product.name%>, <%= product.description %> <%=formatted_price(product.price_in_cents) %></a><br />
+<!-- <a href="/products/<%# product.id %>"><%# product.name%>, <%# product.description %> <%#formatted_price(product.price_in_cents) %></a><br /> -->
 
+<%= link_to product_path(product.id) do %>
+	<h2>
+		<%= formatted_price(product.price_in_cents) %>
+		<%= product.name %>
+	</h2>
+	<% end %>
+
+	<!-- Keeps the description to 100 characters or less -->
+	<p><%= truncate(product.description, length: 100) %></p>

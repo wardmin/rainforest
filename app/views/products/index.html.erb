@@ -7,10 +7,20 @@
 
 
 <div id="products">
-	<ul>
+
 	<%= render @products %>
-	</ul>
+	
 </div>
 
 
-<%= link_to "Add a new product", new_product_path(@product) %>
+
+
+<!-- renders a helpful message with numbers of displayed vs. total entries -->
+
+
+<hr />
+
+<!-- outputs several pagination links such as first prev etc...-->
+<%= paginate @products %>
+
+<%= link_to "Add a new product", new_product_path %>
