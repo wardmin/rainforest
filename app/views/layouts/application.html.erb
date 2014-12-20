@@ -4,10 +4,11 @@
 	  <title>Rainforest</title>
 	  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
 	  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+	  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 	  <%= csrf_meta_tags %>
 	</head>
 	<body>
-		<div id="main-container" class="container-fluid">
+		<div id="main-container" class="container">
 			<div class="row">
 				<% if flash[:notice] %>
 					<p id="alert"> <%= flash[:notice] %> </p>
@@ -17,15 +18,15 @@
 				<% end %>
 			</div>
 		
-	<%= yield %>
+			<%= yield %>
 
-		<p class="userinfo">
-			<% if current_user %>
-			Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
-			<% else %>
-			<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
-			<% end %>
-		</p>
-		</div>
+			<p class="userinfo">
+				<% if current_user %>
+				Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete %>
+				<% else %>
+				<%= link_to "Log in", new_session_path %> or <%= link_to "Sign up", new_user_path %>
+				<% end %>
+			</p>
+		</div><!-- container close -->
 	</body>
 </html>
