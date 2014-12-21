@@ -1,5 +1,7 @@
 <h1>Products#index</h1>
 
+<%= link_to "Add a new product", new_product_path, :class => "btn btn-default" %>
+
 <%= form_tag products_path, method: :get, authentication: false, id: 'search-form' do %>
 	<%= text_field_tag :search, params[:search] %>
 	<%= submit_tag "Search" %>
@@ -23,4 +25,3 @@
 <!-- outputs several pagination links such as first prev etc...-->
 <%= paginate @products %>
 
-<%= link_to "Add a new product", new_product_path %>
