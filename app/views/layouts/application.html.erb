@@ -10,13 +10,29 @@
 	<body>
 		<div id="main-container" class="container">
 			<div class="row">
-				<% if flash[:notice] %>
-					<p id="alert"> <%= flash[:notice] %> </p>
-				<% end %>
-				<% if flash[:alert] %>
-					<p id="alert"><%= flash[:alert] %></p>	
-				<% end %>
+				<nav class="navbar navbar-default" role="navigation"> 
+					<div class="navbar-header">
+						<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="collapse">
+							<span class="sr-only">Toggle Navigation</span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+							<span class="icon-bar"></span>
+						</button>
+					</div>
+					<div class="collapse navbar-collapse" id="collapse">
+						<ul class="nav-pills nav-justified">
+							<li><a href="">Home</a></li>
+						</ul>
+					</div>
+					
+				</nav>
 			</div>
+					<% if flash[:notice] %>
+						<p id="alert"> <%= flash[:notice] %> </p>
+					<% end %>
+					<% if flash[:alert] %>
+						<p id="alert"><%= flash[:alert] %></p>	
+					<% end %>
 		
 			<%= yield %>
 			<div class="row">
