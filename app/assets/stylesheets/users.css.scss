@@ -1,9 +1,21 @@
 // Place all the styles related to the users controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.sign-in-container {
+	padding: 6em 0;
+}
 .sign-in-form {
 	max-width: 400px;
 	margin: 0 auto;
-	padding: 15px;
+	padding: 25px;
 	border: 1px solid #ddd;
+	border-radius: 10px;
+	background-color: #333;
+	color: #fff;
+
+		h1 {
+			margin: 5px 0 20px;
+			padding-bottom: 8px;
+			border-bottom: 1px solid #eee;
+		}
 }
