@@ -14,8 +14,8 @@ $(document).on('ready page:load', function() {
 			if ( nextPage.length > 0 ) {
 				var href = nextPage.attr('href');
 				$.getScript(href);
-			}
-			
+			}	
 		}
 	});
+	$('.alert').delay(5000).fadeOut(1000);
 })

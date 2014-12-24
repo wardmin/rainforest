@@ -16,6 +16,6 @@ class SessionsController < ApplicationController
 
   def destroy
   	session[:user_id] = nil
-  	redirect_to products_url, success: "Logged out!"
+  	redirect_to products_url, :flash => {success: "Logged out!"}
   end
 end
