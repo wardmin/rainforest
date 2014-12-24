@@ -39,18 +39,18 @@
 						</div>
 
 						<% if current_user %>
-						<p class="navbar-text navbar-right">Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete, :class => "btn btn-primary btn-sm" %></p>
+						<p class="navbar-text navbar-right">Signed in as <%= current_user.name %>. <%= link_to "Log out", session_path("current"), :method => :delete, :class => "btn btn-primary navbar-btn" %></p>
 						<% else %>
-						<p class="nav navbar-text navbar-right"><%= link_to "Log in", new_session_path, :class => "btn btn-primary btn-sm"%> or <%= link_to "Sign up", new_user_path, :class => "btn btn-primary btn-sm" %></p>
+						<%= link_to "Log in", new_session_path, :class => "btn btn-primary navbar-btn navbar-right"%> &nbsp; <%= link_to "Sign up", new_user_path, :class => "btn btn-primary navbar-btn navbar-right" %> &nbsp;
 						<% end %>
 						
 				</nav>
 			</div>
 				<% flash.each do |key, value| %>
-  					<%= content_tag :div, value, class: "flash #{key}" %>
+  					<%= content_tag :div, value, class: "alert alert-#{key}" %>
 				<% end %>
 
-				
+
 			<%= yield %>
 
 
