@@ -34,9 +34,10 @@
 						<%= form_tag products_path, method: :get, authentication: false, id: 'search-form', :class => "navbar-form navbar-left" do %>
 						<div class="form-group">
 							<%= text_field_tag :search, params[:search], :class => "form-control", :placeholder => "Search" %>
+						</div>
 							<%= submit_tag "Search", :class => "btn btn-default" %>
 						<% end %>
-						</div>
+						
 
 						<% if current_user %>
 						<%= link_to "Log out", session_path("current"), :method => :delete, :class => "btn btn-primary navbar-btn navbar-right" %> <p class="navbar-text navbar-right">Signed in as <%= link_to current_user.name, user_path(current_user) %>.  &nbsp;  </p>
