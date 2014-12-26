@@ -9,7 +9,7 @@ Rails.application.routes.draw do
   resources :products do
     resources :reviews
   end
-  resources :users, only:[:new, :create]
+  resources :users
   resources :sessions, only:[:new, :create, :destroy]
   # get 'products/index'
 
