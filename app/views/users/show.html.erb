@@ -1,11 +1,12 @@
-
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<h1>Name: <%= @user.name %></h1>
-	</div>
-	<div class="panel-body">
-	<p>email: 	<%= @user.email %>
-	</p>
-	<p><%= link_to "Edit", edit_user_path %></p>
+<div class="sign-in-container">
+	<div class="panel panel-primary">
+		<div class="panel-heading">
+			<h1>Name: <%= @user.name %></h1>
+		</div>
+		<div class="panel-body">
+		<p>email: 	<%= @user.email %>
+		</p>
+		<p><%= link_to "Edit", edit_user_path %></p>
+		</div>
 	</div>
 </div>
