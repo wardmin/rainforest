@@ -1,6 +1,8 @@
 <h1>Products </h1>
 
-<%= link_to "Back", products_path %> | <%= link_to "Edit", edit_product_path(@product.id) %>
+<ul class="pager">
+<li class="previous"><%= link_to "Back", products_path %></li> <li class="previous"> <%= link_to "Edit", edit_product_path(@product.id) %></li>
+</ul>
 
 <p><%= render @product %></p>
 
