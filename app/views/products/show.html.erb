@@ -14,26 +14,25 @@
 <% end %>
 </div>
 <% if current_user %>
+		<h4>New Review</h4>
+		<%= form_for [@product, @review], :remote => true do |f| %>
+			<div id="review-form-errors">
+				<%= render :partial => "/products/review_form_errors" %>
+			</div>
 
-	<h4>New Review</h4>
-	<%= form_for [@product, @review], :remote => true do |f| %>
-		<div id="review-form-errors">
-			<%= render :partial => "/products/review_form_errors" %>
-		</div>
+			<div class="form-group">
+				<%= f.label :comment %><br />
+				<%= f.text_area :comment, class: "form-control", rows: "3" %>
+			</div>
+			<div class="form-group">
+				<%= f.submit class: "btn btn-default" %>
+			</div>
+		<% end %>
 
-		<div class="field">
-			<%= f.label :comment %><br />
-			<%= f.text_area :comment %>
-		</div>
-		<div class="actions">
-			<%= f.submit %>
-		</div>
-	<% end %>
+		<% else %>
+		<p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
 
-	<% else %>
-	<p>Please <%= link_to "log in", new_session_path %> to add a review.</p>
-
-	<% end %>
+		<% end %>
 	<script type="text/javascript">
 	$(function() {
 		$("#new_review")
