@@ -2,13 +2,13 @@ class ProductsController < ApplicationController
   before_action :ensure_logged_in, except: [:index, :show]
 
   def index
-
     @products = if params[:search]
       Product.where("LOWER(name) LIKE LOWER(?)", "%#{params[:search]}%")
     else
       Product.order('products.created_at DESC')
     end
     @products = @products.page(params[:page])
+    @featured = Product.order("RANDOM()").first
 
     respond_to do |format|
       format.html

@@ -1,11 +1,11 @@
-// $(document).on('ready page:load', function() {
-// 	$('#search-form').submit(function(event) {
-// 		event.preventDefault();
-// 		var searchValue = $('#search').val();
+$(document).on('ready page:load', function() {
+	$('#search-form').submit(function(event) {
+		event.preventDefault();
+		var searchValue = $('#search').val();
 
-// 		$.getScript('/products?search=' + searchValue);
-// 	});
-// });
+		$.getScript('/products?search=' + searchValue);
+	});
+});
 
 // $(document).on('ready page:load', function() {
 // 	$(window).scroll(function() {
