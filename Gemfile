@@ -41,7 +41,10 @@ end
 gem 'bcrypt', '~> 3.1.7'
 
 gem 'kaminari'
+
+# Image upload and resizing
 gem 'carrierwave'
+gem "mini_magick"
 
 # Use unicorn as the app server
 # gem 'unicorn'
