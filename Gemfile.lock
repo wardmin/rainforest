@@ -154,7 +154,6 @@ DEPENDENCIES
   binding_of_caller
   bootstrap-sass (~> 3.2.0)
   carrierwave
-  coffee-rails (~> 4.0.0)
   factory_girl
   faker
   jbuilder (~> 2.0)
